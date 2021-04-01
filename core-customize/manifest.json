@@ -3,7 +3,16 @@
     "enableImageProcessingService": true,
     "extensions": [
         "cloudmediaconversion",  
-        "mediaconversionbackoffice"
+        "mediaconversionbackoffice",
+        "smartedit",
+        "cmssmartedit",
+        "smarteditwebservices",
+        "cmssmarteditwebservices",
+        "oauth2",
+        "cmswebservices",
+        "permissionswebservices",
+        "previewwebservices",
+        "mediaweb"
     ],
     "useConfig": {
         "properties": [

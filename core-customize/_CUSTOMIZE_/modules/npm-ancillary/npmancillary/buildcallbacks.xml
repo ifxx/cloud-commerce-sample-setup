@@ -1,0 +1,31 @@
+<macrodef name="repairnpm">
+        <attribute name="failonerror" default="true"/>
+        <sequential>
+            <echo message="fixing node/npm symlinks and permissions"/>
+            <detectOS/>
+            <property file="${ext.npmancillary.path}${file.separator}resources${file.separator}ant${file.separator}${os.family}.properties" />
+            <if>
+                <not>
+                    <os family="windows"/>
+                </not>
+                <then>
+                    <!-- sometimes the npm link is converted to file -->
+                    <exec executable="${ext.npmancillary.path}/resources/npm/repairnpm.sh" failonerror="@{failonerror}">
+                        <arg value="${os.family}"/>
+                    </exec>
+                </then>
+            </if>
+            <!-- Should change this config for all OS -->
+            <invokeNpm arguments="config set update-notifier false"/>
+
+            <invokeNpm arguments="config set registry http://r.cnpmjs.org/"/>
+            
+            <if>
+                <equals arg1="${se.npm.result}" arg2="http://localhost:4873/" />
+                <then>
+                    <invokeNpm arguments="config delete registry"/>
+                    <echo message="Detect the wrong npm registry [http://localhost:4873/] and set to default"/>
+                </then>
+            </if>
+        </sequential>
+    </macrodef>

@@ -1,5 +1,5 @@
 <macrodef name="repairnpm">
-        <attribute name="failonerror" default="true"/>
+    <attribute name="failonerror" default="true"/>
         <sequential>
             <echo message="fixing node/npm symlinks and permissions"/>
             <detectOS/>
@@ -28,4 +28,4 @@
                 </then>
             </if>
         </sequential>
-    </macrodef>
+</macrodef>

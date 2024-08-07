@@ -334,6 +334,10 @@
                     "contextPath": "/medias"
                 },
                 {
+					"name": "yacceleratorstorefront",
+					"contextPath": ""
+				},
+                {
                     "name": "acceleratorservices",
                     "contextPath": "/acceleratorservices"
                 },

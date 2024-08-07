@@ -18,7 +18,7 @@
             <!-- Should change this config for all OS -->
             <invokeNpm arguments="config set update-notifier false"/>
 
-            <invokeNpm arguments="config set registry http://r.cnpmjs.org/"/>
+            <invokeNpm arguments="config set registry https://registry.npmmirror.com"/>
             
             <if>
                 <equals arg1="${se.npm.result}" arg2="http://localhost:4873/" />
